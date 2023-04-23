@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Blackjack extends Game {
 
-    private Player player;
-    private Player computer;
-    private Deck deck;
+    Player player;
+    Player computer;
+    Deck deck;
 
     public Blackjack(String name) {
         super(name);
@@ -16,13 +16,6 @@ public class Blackjack extends Game {
         deck.shuffle();
     }
 
-    Blackjack(Player player1, Player player2, Deck deck) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    Blackjack(Player player1, Player player2, Deck deck) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     @Override
     public void play() {
@@ -42,7 +35,7 @@ public class Blackjack extends Game {
         // Player's turn
         Scanner scanner = new Scanner(System.in);
         while (player.getHandValue() < 21) {
-            System.out.print("Do you want to hit or stand? (h/s): ");
+            System.out.print("Do you want to hit or stand? (hit/stand): ");
             String choice = scanner.nextLine();
             if (choice.equalsIgnoreCase("hit")) {
                 player.addCard(deck.dealCard());
